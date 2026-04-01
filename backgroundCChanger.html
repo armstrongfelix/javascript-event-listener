@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="m-auto p-0 bg-gray-100 h-screen flex flex-col gap-20 items-center justify-center"
+  >
+    <div
+      class="bg-gray-200 w-1/2 h-[60vh] shadow-md rounded-md p-4 flex items-center justify-center gap-20"
+    >
+      <button id="red" class="bg-[red] w-fit h-fit p-4">RED</button>
+      <button id="green" class="bg-[green] w-fit h-fit p-4">GREEN</button>
+      <button id="blue" class="bg-[blue] w-fit h-fit p-4">BLUE</button>
+    </div>
+  </body>
+
+  <script>
+    const redButton = document.getElementById("red");
+    const greenButton = document.getElementById("green");
+    const blueButton = document.getElementById("blue");
+
+    redButton.addEventListener("click", () => {
+      document.body.style.backgroundColor = "red";
+    });
+
+    greenButton.addEventListener("click", () => {
+      document.body.style.backgroundColor = "green";
+    });
+
+    blueButton.addEventListener("click", () => {
+      document.body.style.backgroundColor = "blue";
+    });
+  </script>
+</html>
