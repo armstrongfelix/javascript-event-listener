@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <body class="m-[auto] p-0 bg-gray-100 h-screen flex flex-col gap-20">
+      <h1 class="text-[2rem] font-semibold text-center">
+        JAVASCRIPT EVENT LISTENERS
+      </h1>
+      <div
+        class="bg-gray-200 w-full h-[60vh] shadow-md rounded-md p-4 flex items-center justify-center gap-20"
+      >
+        <div class="flex flex-col gap-6">
+          <label for="comment">Type Something</label>
+          <input
+            type="text"
+            name=""
+            id="comment"
+            cols="50"
+            rows="10"
+            class="border-1 border-[black]"
+          ></input>
+        </div>
+        <p
+          id="displayResult"
+          class="min-w-[50%] h-[30%] bg-white text-center rounded-md p-4 text-2xl font-semibold"
+        ></p>
+      </div>
+    </body>
+    <script>
+        const input = document.getElementById("comment");
+        const display = document.getElementById("displayResult");
+
+        function getLastKeyPressed(event) {
+            const lastKey = event.key;
+            display.textContent = `${lastKey}`;
+        }
+
+        input.addEventListener("keydown", getLastKeyPressed);
+    </script>
+  </body>
+</html>

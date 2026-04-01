@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="m-auto p-0 bg-gray-100 h-screen flex flex-col gap-20 items-center justify-center"
+  >
+    <form
+      action=""
+      class="flex flex-col w-1/2 h-1/2 bg-gray-300 items-center justify-center gap-10 p-4 rounded-md shadow-md"
+    >
+      <div
+        class="flex flex-col h-full w-full items-center justify-center gap-4"
+      >
+        <label
+          for="name"
+          class="p-4 text-2xl font-semibold text-center bg-gray-200 rounded-md shadow-md flex items-center justify-center"
+          >Full Name:</label
+        >
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Your Full Name"
+          class="bg-gray-100 w-1/2 h-[60px] placeholder:text-center rounded-md"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-fit h-fit p-4 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-700 active:bg-blue-950 transition-colors duration-300"
+      >
+        Submit Form
+      </button>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    const nameInput = document.getElementById("name");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      const nameValue = nameInput.value.trim();
+
+      if (nameValue === "") {
+        alert("Name is required");
+      } else {
+        alert(`Welcome, ${nameValue}!`);
+      }
+    });
+  </script>
+</html>
